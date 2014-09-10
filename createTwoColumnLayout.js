@@ -1,5 +1,5 @@
-function createTwoColumnLayout (itemsClassSelector) {
-     var colCount = 1;
+function createTwoColumnLayout(itemsClassSelector) {
+    var colCount = 1;
     var c = 0;
     if (itemsClassSelector.indexOf(".") > -1) {
         items = $(itemsClassSelector);
@@ -8,7 +8,7 @@ function createTwoColumnLayout (itemsClassSelector) {
         items = $("." + itemsClassSelector);
         itemsClassSelector = "." + itemsClassSelector;
     }
-    alert((Math.floor(items.length/2)) + 1);    items.each(function () {
+    items.each(function () {
         var item = $(this);
         var children = item.children().first();
         item.addClass("sf_colsOut sf_2cols_" + colCount + "_50");
@@ -27,20 +27,11 @@ function createTwoColumnLayout (itemsClassSelector) {
             colCount = 1;
             c++;
         }
-        if (items.length % 2) {
-            var count = 0;
-            var lastCol = Math.floor(items.length / 2) + 1;
-
-            cols = $(itemsClassSelector + ".sf_colsOut.sf_2cols_1_50");
-            var colItem;
-            cols.each(function () {
-                colItem = $(this);
-                if (cols.length == lastCol && !colItem.parent().hasClass("sf_cols") && colItem.siblings(itemsClassSelector + ".sf_colsOut.sf_2cols_2_50").length === 0) {
-                    colItem.wrapAll("<div class='sf_cols'></div>").after("<div class='" + itemsClassSelector.replace(".", "") + " sf_colsOut sf_2cols_2_50'><div class='sf_colsIn sf_2cols_2in_50'></div></div>");
-                }
-            });
-            
-        }
     });
-    
+    if (items.length % 2) {
+        cols = $(itemsClassSelector + ".sf_colsOut.sf_2cols_1_50").last();
+        if (!cols.parent().hasClass("sf_cols") && cols.siblings(itemsClassSelector + ".sf_colsOut.sf_2cols_2_50").length === 0) {
+            cols.wrapAll("<div class='sf_cols'></div>").after("<div class='" + itemsClassSelector.replace(".", "") + " sf_colsOut sf_2cols_2_50'><div class='sf_colsIn sf_2cols_2in_50'></div></div>");
+        }
+    }
 }
