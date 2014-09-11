@@ -43,7 +43,6 @@ function createColumnLayout(itemsClassSelector,numCols) {
         }
         colCount++;
         if (colCount > numCols) {
-
             var cols = selectColumns(numCols, itemsClassSelector);
 
             if (!cols.parent().hasClass("sf_cols")) {
@@ -73,22 +72,41 @@ function createColumnLayout(itemsClassSelector,numCols) {
 }
 
 function selectColumns(numCols,itemsClassSelector) {
+    var colPercent = "", colsSelectorString="";
+
     switch (numCols) {
         case 2:
-            return $(":not(.sf_cols) > " + itemsClassSelector + ".sf_colsOut.sf_2cols_1_50," + " :not(.sf_cols) > " + itemsClassSelector + ".sf_colsOut.sf_2cols_2_50");
+            colPercent = "50";
             break;
         case 3:
-            return $(":not(.sf_cols) > " + itemsClassSelector + ".sf_colsOut.sf_3cols_1_33," + " :not(.sf_cols) > " + itemsClassSelector + ".sf_colsOut.sf_3cols_2_34," + " :not(.sf_cols) > " + itemsClassSelector + ".sf_colsOut.sf_3cols_3_33");
             break;
         case 4:
-            return $(":not(.sf_cols) > " + itemsClassSelector + ".sf_colsOut.sf_4cols_1_25," + " :not(.sf_cols) > " + itemsClassSelector + ".sf_colsOut.sf_4cols_2_25," + " :not(.sf_cols) > " + itemsClassSelector + ".sf_colsOut.sf_4cols_3_25," + " :not(.sf_cols) > " + itemsClassSelector + ".sf_colsOut.sf_4cols_4_25");
+            colPercent = "25";
             break;
         case 5:
-            return $(":not(.sf_cols) > " + itemsClassSelector + ".sf_colsOut.sf_5cols_1_20," + " :not(.sf_cols) > " + itemsClassSelector + ".sf_colsOut.sf_5cols_2_20," + " :not(.sf_cols) > " + itemsClassSelector + ".sf_colsOut.sf_5cols_3_20," + " :not(.sf_cols) > " + itemsClassSelector + ".sf_colsOut.sf_5cols_4_20," + " :not(.sf_cols) > " + itemsClassSelector + ".sf_colsOut.sf_5cols_5_20");
+            colPercent = "20";
             break;
         default:
             console.log("No case met in switch statement. Check the number of columns parameter in the method call. ");
     }
+
+    if (numCols == 3) {
+        for (i = 1; i <= numCols; i++) {
+            if (i == 2) {
+                colsSelectorString += ":not(.sf_cols) > " + itemsClassSelector + ".sf_colsOut.sf_" + numCols + "cols_" + i + "_34, ";
+            }
+            else {
+                colsSelectorString += ":not(.sf_cols) > " + itemsClassSelector + ".sf_colsOut.sf_" + numCols + "cols_" + i + "_33, ";
+            }
+        }
+    }
+    else {
+        for (i = 1; i <= numCols; i++) {
+            colsSelectorString += ":not(.sf_cols) > " + itemsClassSelector + ".sf_colsOut.sf_" + numCols + "cols_" + i + "_" + colPercent + ", ";
+        }
+    }
+    colsSelectorString = colsSelectorString.substring(0, colsSelectorString.length - 2);
+    return $(colsSelectorString);
 }
 
 jQuery.fn.extend({
@@ -160,5 +178,4 @@ jQuery.fn.extend({
                 console.log("No case met in switch statement. Check the number of columns parameter in the method call. ");
         }
     }
-
 });
