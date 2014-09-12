@@ -12,12 +12,8 @@
 <%@ Import Namespace="Telerik.Sitefinity.Modules.Comments" %>
 <%@ Import Namespace="Telerik.Sitefinity.Libraries.Model" %>
    <sf:ResourceLinks id="resourcesLinks3" runat="server">
-    <sf:ResourceFile Name="Telerik.Sitefinity.Resources.Themes.Basic.Styles.fancybox.css" Static="true" />
-    <sf:ResourceFile JavaScriptLibrary="JQuery" />
+        <sf:ResourceFile JavaScriptLibrary="JQuery" />
 </sf:ResourceLinks>
-<sf:CssEmbedControl runat="server" ID="CssEmbedControl1" Url="~/Content/OwlCarousel/owl.carousel.css"></sf:CssEmbedControl >
-<sf:CssEmbedControl runat="server" ID="CssEmbedControl2" Url="~/Content/OwlCarousel/owl.theme.css"></sf:CssEmbedControl >
-<sf:CssEmbedControl runat="server" ID="CssEmbedControl3" Url="~/Content/OwlCarousel/styles.css"></sf:CssEmbedControl >
 <sf:SitefinityLabel id="title" runat="server" WrapperTagName="div" HideIfNoText="true" HideIfNoTextMode="Server" CssClass="sfitemFieldLbl" />
 <telerik:RadListView ID="dynamicContentListView" ItemPlaceholderID="ItemsContainer" runat="server" EnableEmbeddedSkins="false" EnableEmbeddedBaseStylesheet="false">
     <LayoutTemplate>
@@ -41,4 +37,6 @@
 </telerik:RadListView>
 <sf:Pager id="pager" runat="server"></sf:Pager>
 <asp:PlaceHolder ID="socialOptionsContainer" runat="server"></asp:PlaceHolder>
-<sf:JavaScriptEmbedControl runat="server" ID="GalleryScripts" ScriptEmbedPosition="InPlace" Url="~/Scripts/OwlCarousel/scripts.js"></sf:JavaScriptEmbedControl>
+<!-- 
+<sf:JavaScriptEmbedControl runat="server" ID="GridScripts" ScriptEmbedPosition="InPlace" Url="~/SomeFolder/SomeSubFolder/createColumnLayout.min.js"></sf:JavaScriptEmbedControl>
+-->
