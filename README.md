@@ -49,7 +49,7 @@ Here are 3 easy ways you can include the JS in your Sitefinity project.
 `createColumnLayout("custom-module-grid", "grid-item", 2);`  
 NOTE: `createColumnLayout(containerClass,itemsClassSelector,numberOfColumns)`
 
-####4. Important notes:
+####Important notes:
 
 When you call the method, you pass in the container class, the item class, and the number of columns. Below are examples of the minimum ammount of HTML markup you need to have for the method to work properly. 
 
