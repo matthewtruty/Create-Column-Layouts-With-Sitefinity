@@ -13,6 +13,9 @@ Here are 3 easy ways you can include the JS with your dynamic module widget temp
 
 
 ####2. Create the custom module widget template:
+-s
+####3. Call the method:
 
 
-`<iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/12Eoz39zx-HaaQr-PkIVgxu-XyBCld-F2aOkzthUReM0/pubchart?oid=737466466&amp;format=interactive"></iframe>`
+
+
