@@ -49,21 +49,33 @@ NOTE: `createColumnLayout(containerClass,itemsClassSelector,numberOfColumns)`
 
 ####4. Important notes:
 
-When you need to pass in the container class, the item class, and the number of columns. Below is an example of the minimum ammount you need to have inorder for the method to work properly. 
+When you call the method, you pass in the container class, the item class, and the number of columns. Below is an example of the minimum ammount of HTML markup you need to have for the method to work properly. 
+
+Sitefinity widget template
 
     <LayoutTemplate>
-      <div class="custom-module-grid">
+      <div class="custom-module-grid"> <!-- Container class -->
         <asp:PlaceHolder ID="ItemsContainer" runat="server" />
       </div>
     </LayoutTemplate>
     <ItemTemplate>
-      <div class="grid-item">
-        <div>
-        <!-- Dynamic module fields go here --> 
+      <div class="grid-item"> <!-- Item class -->
+        <div> <!-- Used for Sitefinity column class -->
+          <!-- Dynamic module fields go here --> 
         </div>
       </div>
     </ItemTemplate>
     
+MVC widget template:
+
+    <div class="custom-module-grid"><!-- Container class -->
+      <div class="grid-item"> <!-- Item class -->
+        <div> <!-- Used for Sitefinity column class -->
+            <!-- Dynamic module fields go here --> 
+        </div>
+      </div>
+    </div>
+   
 ####5. How it works:
 COMING SOON
 
