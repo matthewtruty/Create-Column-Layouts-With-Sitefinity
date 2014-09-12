@@ -1,7 +1,7 @@
 ###Creating Dynamic Module column layouts with Sitefinity 
 =========================
 
-This JS method converts a list of dynamic module items into a grid with a specified number of columns using the Sitefinity column classes. There are two sets of instructions below. The Short Version has just enough information for an experienced Sitefinity developer to use when apply this method to a dynamic module list. The [Detailed Version]() goes provides in depth, step-by-step instructions on how to apply this method to a dynamic module list.
+This JS method converts a list of dynamic module items into a grid with a specified number of columns using the Sitefinity column classes. There are two sets of instructions below. The Short Version has just enough information for an experienced Sitefinity developer to use when apply this method to a dynamic module list. The [Detailed Version]() goes provides in depth, step-by-step instructions on how to apply this method to a dynamic module list. in both versions, it is assumed that you have created a dynamic module and have added several items to the module. 
 
 ###Short Version:
 1. Include [createColumnLayout.js](https://github.com/matthewtruty0093/Create-Column-Layouts-With-Sitefinity/blob/master/createColumnLayout.js) or [createColumnLayout.min.js](https://github.com/matthewtruty0093/Create-Column-Layouts-With-Sitefinity/blob/master/createColumnLayout.min.js) in your project
@@ -12,8 +12,8 @@ This JS method converts a list of dynamic module items into a grid with a specif
 ###Detailed Version:
 
 ####1. Include the Javascript in your project:
-Here are 3 easy ways you can include the JS with your dynamic module widget template.
-  - **CDN:** Include the CDN script tag in your page template. `<script src="http://d35e7mkljnxl9p.cloudfront.net/sitefinity/createColumnLayout.1.0.min.js"></script>` NOTE: Make sure that jQuery is included before this script tag.
+Here are 3 easy ways you can include the JS in your Sitefinity project.
+  - **CDN:** Add this CDN script to your page template. `<script src="http://d35e7mkljnxl9p.cloudfront.net/sitefinity/createColumnLayout.1.0.min.js"></script>` NOTE: Make sure that jQuery is included before this script tag.
   - **Existing JS File:** Copy and paste the code from the [createColumnLayout.js](https://github.com/matthewtruty0093/Create-Column-Layouts-With-Sitefinity/blob/master/createColumnLayout.js) or [createColumnLayout.min.js](https://github.com/matthewtruty0093/Create-Column-Layouts-With-Sitefinity/blob/master/createColumnLayout.min.js) into your existing JS file used in your Sitefinity project. 
   - **Embedded Resource:** Add [createColumnLayout.js](https://github.com/matthewtruty0093/Create-Column-Layouts-With-Sitefinity/blob/master/createColumnLayout.js) or [createColumnLayout.min.js](https://github.com/matthewtruty0093/Create-Column-Layouts-With-Sitefinity/blob/master/createColumnLayout.min.js) to your project and add an embedded resource link at the bottom of the widget template (widget template listed below). `<sf:JavaScriptEmbedControl runat="server" ID="CreateColumnScript" ScriptEmbedPosition="InPlace" Url="~/SomeFolderName/SomeSubFolderName/createColumnLayout.min.js"></sf:JavaScriptEmbedControl>`
 
@@ -25,7 +25,7 @@ Here are 3 easy ways you can include the JS with your dynamic module widget temp
   3. Click Create a template.
   4. In the This template is applied to... dropdown box, select the widget for which you want to create a template
   5. For example if you want to create new template for the single post item view of the blogs, select Blogs posts single.
-  6. In the text area, write your code for the template.
+  6. In the text area, paste in the template.
   7. To insert a property field of the widget, in the template, click the desired field in the right menu.
   8. A window displaying the syntax of the field appears. NOTE: All custom fields you have created for the content type you have chosen in This template is applied to..., appear under Other data node.
   9. To add the sample code, in the text area, click Insert.
