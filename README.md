@@ -1,7 +1,7 @@
 ###Creating Dynamic Module column layouts with Sitefinity 
 =========================
 
-This JS method converts a list of dynamic module items into a grid with a specified number of columns using the Sitefinity column classes. There are two sets of instructions below. The Short Version has just enough information for an experienced Sitefinity developer to use when apply this method to a dynamic module list. The [Detailed Version]() provides in depth, step-by-step instructions on how to apply this method to a dynamic module list. in both versions, it is assumed that you have created a dynamic module and have added several items to the module. 
+This JS method converts a list of dynamic module items into a grid with a specified number of columns (2 to 5) using the Sitefinity column classes. There are two sets of instructions below. The Short Version has just enough information for an experienced Sitefinity developer to use when apply this method to a dynamic module list. The [Detailed Version]() provides in depth, step-by-step instructions on how to apply this method to a dynamic module list. in both versions, it is assumed that you have created a dynamic module and have added several items to the module. 
 
 ###Short Version:
 1. Include [createColumnLayout.js](https://github.com/matthewtruty0093/Create-Column-Layouts-With-Sitefinity/blob/master/createColumnLayout.js) or [createColumnLayout.min.js](https://github.com/matthewtruty0093/Create-Column-Layouts-With-Sitefinity/blob/master/createColumnLayout.min.js) in your project
@@ -44,7 +44,11 @@ Here are 3 easy ways you can include the JS in your Sitefinity project.
 **To learn more about configuring dynamic module widgets, [click here](http://www.sitefinity.com/documentation/documentationarticles/user-guide/widgets/content-widgets-group/configuring-custom-module-widgets)
   
 ####3. Call the method:
-`createColumnLayout("custom-module-grid", "grid-item", 2);` NOTE: `createColumnLayout(containerClass,itemsClassSelector,numberOfColumns)`
+`createColumnLayout("custom-module-grid", "grid-item", 2);`  
+NOTE: `createColumnLayout(containerClass,itemsClassSelector,numberOfColumns)`
+
+####4. Important notes:
+
 
 
 
