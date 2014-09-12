@@ -13,7 +13,18 @@ Here are 3 easy ways you can include the JS with your dynamic module widget temp
 
 
 ####2. Create the custom module widget template:
--s
+      - Create a new widget template
+        1. Go to Sitefinity’s backend (http://<yoursite>/sitefinity)
+        2. In the main menu, click Design » Widget Templates.
+        3. Click Create a template.
+        4. In the This template is applied to... dropdown box, select the widget for which you want to create a template
+        5. For example if you want to create new template for the single post item view of the blogs, select Blogs posts single.
+        6. In the text area, write your code for the template.
+        7. To insert a property field of the widget, in the template, click the desired field in the right menu.
+        8. A window displaying the syntax of the field appears. NOTE: All custom fields you have created for the content type you have chosen in This template is applied to..., appear under Other data node.
+        9. To add the sample code, in the text area, click Insert.
+        10. When you have entered the code, in Template name field, enter name of your template.
+        
 ####3. Call the method:
 
 
