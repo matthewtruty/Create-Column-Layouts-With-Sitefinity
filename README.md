@@ -64,7 +64,7 @@ When you need to pass in the container class, the item class, and the number of 
       </div>
     </ItemTemplate>
     
-####5 How does it work?
+####5. How it works:
 COMING SOON
 
 
