@@ -1,7 +1,7 @@
 ###Creating Dynamic Module column layouts with Sitefinity 
 =========================
 
-This JS method converts a list of dynamic module items into a grid with a specified number of columns using the Sitefinity column classes. There are two sets of instructions below. The Short Version has just enough information for an experienced Sitefinity developer to use when apply this method to a dynamic module list. The [Detailed Version]() goes provides in depth, step-by-step instructions on how to apply this method to a dynamic module list. in both versions, it is assumed that you have created a dynamic module and have added several items to the module. 
+This JS method converts a list of dynamic module items into a grid with a specified number of columns using the Sitefinity column classes. There are two sets of instructions below. The Short Version has just enough information for an experienced Sitefinity developer to use when apply this method to a dynamic module list. The [Detailed Version]() provides in depth, step-by-step instructions on how to apply this method to a dynamic module list. in both versions, it is assumed that you have created a dynamic module and have added several items to the module. 
 
 ###Short Version:
 1. Include [createColumnLayout.js](https://github.com/matthewtruty0093/Create-Column-Layouts-With-Sitefinity/blob/master/createColumnLayout.js) or [createColumnLayout.min.js](https://github.com/matthewtruty0093/Create-Column-Layouts-With-Sitefinity/blob/master/createColumnLayout.min.js) in your project
