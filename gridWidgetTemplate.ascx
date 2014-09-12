@@ -24,12 +24,16 @@
     <ItemTemplate>
     <div class="grid-item">
       <div>
+      
+      <!-- Include your dynamic module fields here. The template shows the default widget date.  -->
           <h2 class="sfitemTitle sftitle">
       		<sf:DetailsViewHyperLink ID="DetailsViewHyperLink" TextDataField="Title" runat="server" data-sf-field="Title" data-sf-ftype="ShortText" />
           </h2>
             <sf:FieldListView ID="PublicationDate" runat="server" Format="{PublicationDate.ToLocal():MMM d, yyyy, HH:mm tt}" WrapperTagName="div" WrapperTagCssClass="sfitemPublicationDate" />
               <sf:CommentsCountControl runat="server" ID="commentsCounterControl" CssClass="sfCommentsCounter" ThreadType='<%# Container.DataItem.GetType().FullName%>' ThreadKey='<%# ControlUtilities.GetLocalizedKey(Eval("Id"), null, CommentsBehaviorUtilities.GetLocalizedKeySuffix(Container.DataItem.GetType().FullName)) %>' DisplayMode="ShortText" />
              <sf:CommentsAverageRatingControl runat="server" ThreadType='<%# Container.DataItem.GetType().FullName%>' ThreadKey='<%# ControlUtilities.GetLocalizedKey(Eval("Id"), null, CommentsBehaviorUtilities.GetLocalizedKeySuffix(Container.DataItem.GetType().FullName)) %>' DisplayMode="MediumText" />
+      
+      <!-- Include your dynamic module fields here. The template shows the default widget date.  -->
       
         </div>
       </div>
@@ -38,5 +42,6 @@
 <sf:Pager id="pager" runat="server"></sf:Pager>
 <asp:PlaceHolder ID="socialOptionsContainer" runat="server"></asp:PlaceHolder>
 <!-- 
+Optional way to include the JS with the control. 
 <sf:JavaScriptEmbedControl runat="server" ID="GridScripts" ScriptEmbedPosition="InPlace" Url="~/SomeFolder/SomeSubFolder/createColumnLayout.min.js"></sf:JavaScriptEmbedControl>
 -->
