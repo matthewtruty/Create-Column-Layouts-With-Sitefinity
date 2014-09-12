@@ -24,8 +24,7 @@
     <ItemTemplate>
     <div class="grid-item">
       <div>
-      
-      <!-- Include your dynamic module fields here. The template shows the default widget date.  -->
+      <!-- Begin dynamic module fields. The default dynamic module fields are show below. Add/edit/delete them as needed  -->
           <h2 class="sfitemTitle sftitle">
       		<sf:DetailsViewHyperLink ID="DetailsViewHyperLink" TextDataField="Title" runat="server" data-sf-field="Title" data-sf-ftype="ShortText" />
           </h2>
@@ -33,10 +32,9 @@
               <sf:CommentsCountControl runat="server" ID="commentsCounterControl" CssClass="sfCommentsCounter" ThreadType='<%# Container.DataItem.GetType().FullName%>' ThreadKey='<%# ControlUtilities.GetLocalizedKey(Eval("Id"), null, CommentsBehaviorUtilities.GetLocalizedKeySuffix(Container.DataItem.GetType().FullName)) %>' DisplayMode="ShortText" />
              <sf:CommentsAverageRatingControl runat="server" ThreadType='<%# Container.DataItem.GetType().FullName%>' ThreadKey='<%# ControlUtilities.GetLocalizedKey(Eval("Id"), null, CommentsBehaviorUtilities.GetLocalizedKeySuffix(Container.DataItem.GetType().FullName)) %>' DisplayMode="MediumText" />
       
-      <!-- Include your dynamic module fields here. The template shows the default widget date.  -->
-      
-        </div>
+      <!-- End dynamic module fields  -->
       </div>
+    </div>
     </ItemTemplate>
 </telerik:RadListView>
 <sf:Pager id="pager" runat="server"></sf:Pager>
