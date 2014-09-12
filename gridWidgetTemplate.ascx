@@ -42,6 +42,6 @@
 <sf:Pager id="pager" runat="server"></sf:Pager>
 <asp:PlaceHolder ID="socialOptionsContainer" runat="server"></asp:PlaceHolder>
 <!-- 
-Optional way to include the JS with the control. 
+Optional way to include the JS with the control. Un-comment this line and provide the correct path to the script in the Url property. 
 <sf:JavaScriptEmbedControl runat="server" ID="GridScripts" ScriptEmbedPosition="InPlace" Url="~/SomeFolder/SomeSubFolder/createColumnLayout.min.js"></sf:JavaScriptEmbedControl>
 -->
