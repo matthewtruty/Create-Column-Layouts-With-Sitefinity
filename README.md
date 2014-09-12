@@ -49,7 +49,23 @@ NOTE: `createColumnLayout(containerClass,itemsClassSelector,numberOfColumns)`
 
 ####4. Important notes:
 
+When you need to pass in the container class, the item class, and the number of columns. Below is an example of the minimum ammount you need to have inorder for the method to work properly. 
 
+    <LayoutTemplate>
+      <div class="custom-module-grid">
+        <asp:PlaceHolder ID="ItemsContainer" runat="server" />
+      </div>
+    </LayoutTemplate>
+    <ItemTemplate>
+      <div class="grid-item">
+        <div>
+        <!-- Dynamic module fields go here --> 
+        </div>
+      </div>
+    </ItemTemplate>
+    
+####5 How does it work?
+COMING SOON
 
 
 
