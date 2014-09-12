@@ -1,79 +1,80 @@
-function createColumnLayout(itemsClassSelector,numCols) {
-    var colCount = 1;
-    var c = 0;
-    if (itemsClassSelector.indexOf(".") > -1) {
-        items = $(itemsClassSelector);
-    }
-    else {
-        items = $("." + itemsClassSelector);
-        itemsClassSelector = "." + itemsClassSelector;
-    }
-    items.each(function () {
-        var item = $(this);
-        var children = item.children().first();
-
-        switch (numCols) {
-            case 2:
-                item.twoColOuter(colCount);
-                children.twoColInner(colCount);
-                break;
-            case 3:
-                item.threeColOuter(colCount);
-                children.threeColInner(colCount);
-                break;
-            case 4:
-                item.fourColOuter(colCount);
-                children.fourColInner(colCount);
-                break;
-            case 5:
-                item.fiveColOuter(colCount);
-                children.fiveColInner(colCount);
-                break;
-            case 6:
-                item.twoColOuter(colCount);
-                children.threeColInner(colCount);
-                break;
-            default:
-                console.log("No case met in switch statement. Check the number of columns parameter in the method call. ");
+function createColumnLayout(containerClass,itemsClassSelector,numCols) {
+    // for each grid widget on page...
+    $("." + containerClass).each(function () {
+        var colCount = 1;
+        var c = 0;
+        if (itemsClassSelector.indexOf(".") > -1) {
+            items = $(this).children(itemsClassSelector);
         }
-
-        var t = c % 2;
-        if (t === 1) {
-            children.addClass("alt");
+        else {
+            itemsClassSelector = "." + itemsClassSelector;
+            items = $(this).children(itemsClassSelector);
         }
-        colCount++;
-        if (colCount > numCols) {
-            var cols = selectColumns(numCols, itemsClassSelector);
+        items.each(function () {
+            var item = $(this);
+            var children = item.children().first();
 
-            if (!cols.parent().hasClass("sf_cols")) {
-                cols.wrapAll("<div class='sf_cols'></div>");
+            switch (numCols) {
+                case 2:
+                    item.twoColOuter(colCount);
+                    children.twoColInner(colCount);
+                    break;
+                case 3:
+                    item.threeColOuter(colCount);
+                    children.threeColInner(colCount);
+                    break;
+                case 4:
+                    item.fourColOuter(colCount);
+                    children.fourColInner(colCount);
+                    break;
+                case 5:
+                    item.fiveColOuter(colCount);
+                    children.fiveColInner(colCount);
+                    break;
+                case 6:
+                    item.twoColOuter(colCount);
+                    children.threeColInner(colCount);
+                    break;
+                default:
+                    console.log("No case met in switch statement. Check the number of columns parameter in the method call. ");
             }
+            var t = c % 2;
+            if (t === 1) {
+                children.addClass("alt");
+            }
+            colCount++;
+            if (colCount > numCols) {
+                var cols = selectColumns(numCols, itemsClassSelector);
 
-            colCount = 1;
-            c++;
+                if (!cols.parent().hasClass("sf_cols")) {
+                    cols.wrapAll("<div class='sf_cols'></div>");
+                }
+
+                colCount = 1;
+                c++;
+            }
+        });
+        if (items.length % numCols) {
+            cols = $(itemsClassSelector + ".sf_colsOut").last();
+            numFilledSiblings = cols.prevUntil(".sf_cols").length;
+
+            if (!cols.parent().hasClass("sf_cols") && numFilledSiblings < (numCols - 1)) {
+                colFillStartPos = numFilledSiblings + 2;
+
+                cols.fillRow(numCols, colFillStartPos, itemsClassSelector);
+
+                var cols = selectColumns(numCols, itemsClassSelector);
+
+                if (!cols.parent().hasClass("sf_cols")) {
+                    cols.wrapAll("<div class='sf_cols'></div>");
+                }
+            }
         }
     });
-    if (items.length % numCols) {
-        cols = $(itemsClassSelector + ".sf_colsOut").last();
-        numFilledSiblings = cols.prevUntil(".sf_cols").length;
-
-        if (!cols.parent().hasClass("sf_cols") && numFilledSiblings < (numCols - 1)) {
-            colFillStartPos = numFilledSiblings + 2;
-
-            cols.fillRow(numCols, colFillStartPos, itemsClassSelector);
-
-            var cols = selectColumns(numCols, itemsClassSelector);
-
-            if (!cols.parent().hasClass("sf_cols")) {
-                cols.wrapAll("<div class='sf_cols'></div>");
-            }
-        }
-    }
 }
 
 function selectColumns(numCols,itemsClassSelector) {
     var colPercent = "", colsSelectorString="";
-
     switch (numCols) {
         case 2:
             colPercent = "50";
@@ -89,7 +90,6 @@ function selectColumns(numCols,itemsClassSelector) {
         default:
             console.log("No case met in switch statement. Check the number of columns parameter in the method call. ");
     }
-
     if (numCols == 3) {
         for (i = 1; i <= numCols; i++) {
             if (i == 2) {
@@ -158,7 +158,6 @@ jQuery.fn.extend({
                     else {
                         emptyColsHTML += "<div class='" + itemsClassSelector.replace(".", "") + " sf_colsOut sf_" + numCols + "cols_" + i + "_33'><div class='sf_colsIn sf_" + numCols + "cols_" + i + "in_33'></div></div>";
                     }
-                    
                 }
                 return this.after(emptyColsHTML);
                 break;
