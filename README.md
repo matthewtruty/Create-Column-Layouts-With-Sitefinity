@@ -33,12 +33,12 @@ Here are 3 easy ways you can include the JS in your Sitefinity project.
   9. To add the sample code, in the text area, click Insert.
   10. When you have entered the code, in Template name field, enter name of your template.
   11. To save your work, click Create this template.  
-  12. Navigate to the page where your dynamic module list is displayed
+  12. Navigate to the page where your dynamic module list is displayed.
   13. After you have dragged the widget on your page, the widget automatically displays all published dynamic items.
   14. To configure the display of the items, click Edit button in the upper-right corner of the widget.
   15. The Edit window appears
   16. Select the [List Settings tab](http://www.sitefinity.com/documentation/documentationarticles/list-settings-tab)
-  17. In List template, select the template you created in the previous steps.
+  17. In List template dropdown, select the template you created in the previous steps.
   18. Click save
   19. The Edit window closes
   20. Publish the page  
@@ -47,7 +47,7 @@ Here are 3 easy ways you can include the JS in your Sitefinity project.
   
 ####3. Call the method:
 `createColumnLayout("custom-module-grid", "grid-item", 2);`  
-Note: `createColumnLayout(containerClass,itemsClassSelector,numberOfColumns)`
+NOTE: `createColumnLayout(containerClass,itemsClassSelector,numberOfColumns)`
 
 ####Important notes:
 
