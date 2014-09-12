@@ -43,7 +43,7 @@ Here are 3 easy ways you can include the JS in your Sitefinity project.
   19. The Edit window closes
   20. Publish the page  
 
-**To learn more about configuring dynamic module widgets, [click here](http://www.sitefinity.com/documentation/documentationarticles/user-guide/widgets/content-widgets-group/configuring-custom-module-widgets)
+**To learn more about configuring dynamic module widgets**, [click here](http://www.sitefinity.com/documentation/documentationarticles/user-guide/widgets/content-widgets-group/configuring-custom-module-widgets)
   
 ####3. Call the method:
 `createColumnLayout("custom-module-grid", "grid-item", 2);`  
