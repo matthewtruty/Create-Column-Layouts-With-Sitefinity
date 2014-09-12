@@ -1,7 +1,7 @@
 ###Creating Dynamic Module column layouts with Sitefinity 
 =========================
 
-This JS method converts a list of dynamic module items into a grid with a specified number of columns (2 to 5), using the Sitefinity column classes. There are two sets of instructions below. The [Short Version]() has just enough information for an experienced Sitefinity developer to get started when applying this method to a dynamic module list. The [Detailed Version]() provides in-depth, step-by-step instructions on how to apply this method to a dynamic module list. In both versions, it is assumed that you have created a dynamic module and have added several items to the module. 
+This JS method converts a list of dynamic module items into a grid with a specified number of columns (2 to 5), using the Sitefinity column classes. There are two sets of instructions below. The [Short Version](#short-version) has just enough information for an experienced Sitefinity developer to get started when applying this method to a dynamic module list. The [Detailed Version](#detailed-version) provides in-depth, step-by-step instructions on how to apply this method to a dynamic module list. In both versions, it is assumed that you have created a dynamic module and have added several items to the module. 
 
 ###Short Version:
 1. Include [createColumnLayout.js](https://github.com/matthewtruty0093/Create-Column-Layouts-With-Sitefinity/blob/master/createColumnLayout.js) or [createColumnLayout.min.js](https://github.com/matthewtruty0093/Create-Column-Layouts-With-Sitefinity/blob/master/createColumnLayout.min.js) in your project
@@ -51,7 +51,7 @@ NOTE: `createColumnLayout(containerClass,itemsClassSelector,numberOfColumns)`
 
 When you call the method, you pass in the container class, the item class, and the number of columns. Below are examples of the minimum ammount of HTML markup you need to have for the method to work properly. 
 
-Sitefinity widget template
+[Sitefinity widget template](https://github.com/matthewtruty0093/Create-Column-Layouts-With-Sitefinity/blob/master/gridWidgetTemplate.ascx)
 
     <LayoutTemplate>
       <div class="custom-module-grid"> <!-- Container class -->
