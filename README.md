@@ -6,10 +6,8 @@ This JS method converts a list of dynamic module items into a grid with a specif
 ###Short Version:
 1. Include [createColumnLayout.js](https://github.com/matthewtruty0093/Create-Column-Layouts-With-Sitefinity/blob/master/createColumnLayout.js) or [createColumnLayout.min.js](https://github.com/matthewtruty0093/Create-Column-Layouts-With-Sitefinity/blob/master/createColumnLayout.min.js) in your project
 2. Create a widget template for your dynamic module and paste in the code from [file name]()
-3. Call the method: `createColumnLayout("custom-module-grid", "grid-item", 2);`
-- Param 1: container class
-- Param 2: item class
-- Param 3: number of columns
+3. Call the method: `createColumnLayout("custom-module-grid", "grid-item", 2);` NOTE: `createColumnLayout(containerClass,itemsClassSelector,numberOfColumns)`
+
 
 ###Detailed Version:
 
