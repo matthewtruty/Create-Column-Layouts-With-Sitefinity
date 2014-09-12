@@ -11,7 +11,7 @@ This JS method converts a list of dynamic module items into a grid with a specif
 
 ###Detailed Version:
 
-####1. Add the Javascript to your project:
+####1. Include the Javascript in your project:
 Here are 3 easy ways you can include the JS with your dynamic module widget template.
   - **CDN:** Include the CDN script tag in your page template. `<script src="http://d35e7mkljnxl9p.cloudfront.net/sitefinity/createColumnLayout.1.0.min.js"></script>` NOTE: Make sure that jQuery is included before this script tag.
   - **Existing JS File:** Copy and paste the code from the [createColumnLayout.js](https://github.com/matthewtruty0093/Create-Column-Layouts-With-Sitefinity/blob/master/createColumnLayout.js) or [createColumnLayout.min.js](https://github.com/matthewtruty0093/Create-Column-Layouts-With-Sitefinity/blob/master/createColumnLayout.min.js) into your existing JS file used in your Sitefinity project. 
