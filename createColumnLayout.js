@@ -1,15 +1,17 @@
 function createColumnLayout(containerClass,itemsClassSelector,numCols) {
     // for each grid widget on page...
+    if (itemsClassSelector.indexOf(".") > -1) {
+            items = $(this).children(itemsClassSelector);
+    }
+    else {
+            itemsClassSelector = "." + itemsClassSelector;
+            items = $(this).children(itemsClassSelector);
+    }
+    
     $("." + containerClass).each(function () {
         var colCount = 1;
         var c = 0;
-        if (itemsClassSelector.indexOf(".") > -1) {
-            items = $(this).children(itemsClassSelector);
-        }
-        else {
-            itemsClassSelector = "." + itemsClassSelector;
-            items = $(this).children(itemsClassSelector);
-        }
+        
         items.each(function () {
             var item = $(this);
             var children = item.children().first();
