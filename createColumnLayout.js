@@ -1,11 +1,12 @@
 function createColumnLayout(containerClass,itemsClassSelector,numCols) {
     // for each grid widget on page...
+    var items; 
     if (itemsClassSelector.indexOf(".") > -1) {
-           var items = $(this).children(itemsClassSelector);
+          items = $(this).children(itemsClassSelector);
     }
     else {
-            itemsClassSelector = "." + itemsClassSelector;
-           var items = $(this).children(itemsClassSelector);
+        itemsClassSelector = "." + itemsClassSelector;
+        items = $(this).children(itemsClassSelector);
     }
     
     $("." + containerClass).each(function () {
