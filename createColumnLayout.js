@@ -1,15 +1,13 @@
-function createColumnLayout(containerClass,itemsClassSelector,numCols) {
+function createColumnLayout(containerClass, itemsClassSelector, numCols) {
     // for each grid widget on page...
-    var items; 
-    if (itemsClassSelector.indexOf(".") > -1) {
-          items = $(this).children(itemsClassSelector);
-    }
-    else {
+   
+    if (itemsClassSelector.indexOf(".") < 1) {
         itemsClassSelector = "." + itemsClassSelector;
-        items = $(this).children(itemsClassSelector);
     }
-    
+          
     $("." + containerClass).each(function () {
+
+        var items = $(this).children(itemsClassSelector);
         var colCount = 1;
         var c = 0;
         
@@ -76,8 +74,8 @@ function createColumnLayout(containerClass,itemsClassSelector,numCols) {
     });
 }
 
-function selectColumns(numCols,itemsClassSelector) {
-    var colPercent = "", colsSelectorString="";
+function selectColumns(numCols, itemsClassSelector) {
+    var colPercent = "", colsSelectorString = "";
     switch (numCols) {
         case 2:
             colPercent = "50";
@@ -136,16 +134,16 @@ jQuery.fn.extend({
         }
     },
     fourColOuter: function (colCount) {
-            return this.addClass("sf_colsOut sf_4cols_" + colCount + "_25");
+        return this.addClass("sf_colsOut sf_4cols_" + colCount + "_25");
     },
     fourColInner: function (colCount) {
-            return this.addClass("sf_colsIn sf_4cols_" + colCount + "in_25");
+        return this.addClass("sf_colsIn sf_4cols_" + colCount + "in_25");
     },
     fiveColOuter: function (colCount) {
-            return this.addClass("sf_colsOut sf_5cols_" + colCount + "_20");
+        return this.addClass("sf_colsOut sf_5cols_" + colCount + "_20");
     },
     fiveColInner: function (colCount) {
-            return this.addClass("sf_colsIn sf_5cols_" + colCount + "in_20");
+        return this.addClass("sf_colsIn sf_5cols_" + colCount + "in_20");
     },
     fillRow: function (numCols, colStartPos, itemsClassSelector) {
         var emptyColsHTML = "";
